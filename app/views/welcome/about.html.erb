@@ -1,0 +1,20 @@
+<h1>Welcome#about</h1>
+<p>Find me in app/views/welcome/about.html.erb</p>
+
+<h1>About Jennifer</h1>
+<p>SEE DOS RUN, RUN DOS RUN</p>
+<p>My favorite color is <%= @color %></p>
+<% if @size > 9 %>
+  <p>My shoe size is <%= @size %>. I have HUGE feet.</p>
+<% else %>
+  <p>My shoe size is <%= @size %></p>
+<% end %>
+
+<style>
+  body {
+    background: <%= @color %>;
+  }
+</style>
+
+<h1>About Me</h1>
+<p>Lots of interesting stuffs.</p>
