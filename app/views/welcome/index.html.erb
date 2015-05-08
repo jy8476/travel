@@ -6,6 +6,7 @@
 <ul>
 <% @countries. each do |country| %>
     <li><%= country %></li>
+    
 <% end %>
     
     <%= image_tag "new-zealand.jpg", alt: "Mountains", id: "NZ", country: "NZLand", height: "200" %>
@@ -16,7 +17,11 @@
     
     <%= image_tag "Sheep.jpg", alt: "Animal", id: "RockeySheep", country: "USA", height: "200" %>
     
+   
+    
  <% @travel_pics.each do |pic| %>
-  <%= image_tag pic, height: "200" %>
+  <%= image_tag pic, height: "200", class: "img-responsive" %>
+    
+    
 <% end %>   
 </ul>
