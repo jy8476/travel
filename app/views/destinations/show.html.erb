@@ -1,0 +1,11 @@
+<h1><%= @destination.city %>, <%= @destination.country %></h1>
+<%= image_tag @destination.avatar.url(:medium) %>
+
+<p><%= @destination.description %></p>
+<h3>Population <%= @destination.population %></h3>
+
+
+<div class="btn-group">
+  <%= link_to 'Edit', edit_destination_path(@destination), class: "btn btn-default" %> 
+  <%= link_to 'Back', destinations_path, class: "btn btn-default" %>
+</div>

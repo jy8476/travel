@@ -1,0 +1,37 @@
+<%= form_for(@destination) do |f| %>
+  <% if @destination.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@destination.errors.count, "error") %> prohibited this destination from being saved:</h2>
+
+      <ul>
+      <% @destination.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+ <div class="field form-group">
+    <%= f.label :city %><br>
+    <%= f.text_field :city, class: "form-control" %>
+  </div>
+  <div class="field form-group">
+    <%= f.label :country %><br>
+    <%= f.text_field :country, class: "form-control" %>
+  </div>
+<div class="field form-group">
+    <%= f.label :population %><br>
+    <%= f.number_field :population, class: "form-control" %>
+  </div>
+<div class="field form-group">
+    <%= f.label :description %><br>
+    <%= f.text_area :description, class: "form-control", rows: "5" %>
+  </div>
+  <div class="field form-group">
+    <%= f.label "Photo" %><br>
+    <%= f.file_field :avatar %>
+  </div>
+  <div class="actions form-group">
+    <%= f.submit class: "btn btn-primary" %>
+  </div>
+<% end %>
