@@ -1,11 +1,24 @@
 <h1><%= @destination.city %>, <%= @destination.country %></h1>
 <%= image_tag @destination.avatar.url(:medium) %>
 
+<div id="destination-map"></div>
+
 <p><%= @destination.description %></p>
 <h3>Population <%= @destination.population %></h3>
+<h1><%= @destination.address %></h1>
 
+ <p><%= @destination.latitude %>, <%= @destination.longitude %></p>
+
+ <p><%= @destination.description %></p>
 
 <div class="btn-group">
   <%= link_to 'Edit', edit_destination_path(@destination), class: "btn btn-default" %> 
   <%= link_to 'Back', destinations_path, class: "btn btn-default" %>
 </div>
+
+<%= javascript_tag do %>
+   latitude = '<%= j @destination.latitude.to_s %>';
+   longitude = '<%= j @destination.longitude.to_s %>';
+   address = '<%= j @destination.address %>';
+   description = '<%= j @destination.description %>';
+<% end %>
